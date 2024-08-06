@@ -1,0 +1,61 @@
+.CContainer {
+    background-color: white;
+}
+
+.CRowimg {
+    background-color: white;
+}
+
+.CRowimg img {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 10px solid black;
+}
+
+.CRowlogin {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.headerText {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.CListGroup {
+    width: 100%;
+    max-width: 600px;
+}
+
+.CTable {
+    width: 100%;
+    max-width: 600px;
+}
+
+.CTable th,
+.CTable td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.CTable th {
+    background-color: #f2f2f2;
+}

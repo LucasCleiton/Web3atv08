@@ -1,0 +1,52 @@
+.CContainer {
+    background-color: white;
+}
+
+.CRowimg {
+    background-color: white;
+}
+
+.CRowimg img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 10px solid black;
+}
+
+.CRowlogin {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 100vh;
+    /* Faz a coluna ocupar toda a altura da tela */
+}
+
+.CForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    /* Define uma largura máxima para o formulário */
+}
+
+.CForm h1 {
+    margin-bottom: 20px;
+}
+
+.CFormInput {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.CButton {
+    margin-top: 10px;
+    width: 100%;
+}

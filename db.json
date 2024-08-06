@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Lucas",
+      "email": "lucas@email.com",
+      "senha": "123456",
+      "contatos": []
+    },
+    {
+      "id": "2",
+      "name": "Ellena",
+      "email": "Elena@email.com",
+      "senha": "123456",
+      "contatos": []
+    },
+    {
+      "id": "acbc",
+      "name": "teste1",
+      "email": "email1@teste1.com",
+      "senha": "123456"
+    },
+    {
+      "id": "f709",
+      "name": "teste1",
+      "email": "email1@teste1.com",
+      "senha": "123456"
+    },
+    {
+      "id": "f292",
+      "name": "teste2",
+      "email": "email2@teste2.com",
+      "senha": "123456"
+    },
+    {
+      "id": "f2e8",
+      "name": "Teste3",
+      "email": "teste3@email.com.br",
+      "senha": "123456"
+    },
+    {
+      "id": "f339",
+      "name": "sdasd",
+      "email": "adsdas",
+      "senha": "dadsads"
+    },
+    {
+      "id": "225e",
+      "name": "Lucas",
+      "email": "lucas@email.com",
+      "senha": "lucas"
+    },
+    {
+      "id": "9a82",
+      "name": "1",
+      "email": "2",
+      "senha": "1"
+    },
+    {
+      "id": "e013",
+      "name": "lucasteste",
+      "email": "lucasteste@email.com",
+      "senha": "1234",
+      "contatos": []
+    }
+  ]
+}
