@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { CContainer, CRow, CCol, CFormInput, CForm, CButton, CAlert } from '@coreui/react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import style from "../login/login.module.css";
 import Imagem from "../../public/imagem.png";
 import '@coreui/coreui/dist/css/coreui.min.css';
+// Import Firebase auth functions
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Login() {
     const [formData, setFormData] = useState({
-        login: '',
+        email: '',
         senha: '',
     });
 
@@ -30,32 +32,23 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.get('http://localhost:3000/users', {
-                params: {
-                    email: formData.login,
-                    senha: formData.senha,
-                }
-            });
+        const { email, senha } = formData;
 
-            if (response.data.length > 0) {
-                // Usuário autenticado com sucesso
-                navigate('/Contatos');
-            } else {
-                // Usuário ou senha incorretos
-                setAlert({
-                    visible: true,
-                    message: 'Usuário ou senha incorretos!',
-                    color: 'danger',
-                });
-            }
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+            const user = userCredential.user;
+            setAlert({
+                visible: true,
+                message: 'Login realizado com sucesso!',
+                color: 'success',
+            });
+            navigate('/home');
         } catch (error) {
             setAlert({
                 visible: true,
-                message: 'Erro ao tentar autenticar o usuário!',
+                message: `Login invalido`,
                 color: 'danger',
             });
-            console.error('Erro ao autenticar usuário:', error);
         }
     };
 
@@ -78,8 +71,8 @@ function Login() {
                             className={style.CFormInput}
                             placeholder="Login"
                             aria-label="login"
-                            name="login"
-                            value={formData.login}
+                            name="email"
+                            value={formData.email}
                             onChange={handleChange}
                         />
                         <CFormInput

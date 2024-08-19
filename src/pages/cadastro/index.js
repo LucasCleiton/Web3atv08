@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import style from "../cadastro/cadastro.module.css";
 import { CContainer, CRow, CCol, CFormInput, CForm, CButton, CAlert } from '@coreui/react';
 import Imagem from "../../public/imagem.png";
-import axios from 'axios';
+
+// Import Firebase auth functions
+import { auth } from '../firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 function Cadastro() {
     const [formData, setFormData] = useState({
@@ -29,8 +32,11 @@ function Cadastro() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const { email, senha } = formData;
+
         try {
-            const response = await axios.post('http://localhost:3000/users', formData);
+            const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+            const user = userCredential.user;
             setAlert({
                 visible: true,
                 message: 'Usuário cadastrado com sucesso!',
@@ -40,10 +46,9 @@ function Cadastro() {
         } catch (error) {
             setAlert({
                 visible: true,
-                message: 'Erro ao cadastrar usuário!',
+                message: `Erro ao cadastrar usuário: ${error.message}`,
                 color: 'danger',
             });
-            console.error('Erro ao cadastrar usuário:', error);
         }
     };
 
